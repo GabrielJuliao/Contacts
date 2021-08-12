@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/global.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css" />
+    <script src="${pageContext.request.contextPath}/js/validatePasswd.js"></script>
     <title>Contacts | Sign Up</title>
 </head>
 <body>

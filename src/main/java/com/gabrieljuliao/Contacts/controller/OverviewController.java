@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-@WebServlet("/overview")
+@WebServlet("overview")
 public class OverviewController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ContactDAO contactDAO = new ContactDAO((Connection) getServletContext().getAttribute("dbCon"));
         HttpSession httpSession = req.getSession();
         User user = (User) httpSession.getAttribute("user");
-        ArrayList<Contact> contactModels = contactDAO.getAllContacts(user.getId());
-        httpSession.setAttribute("contacts", contactModels);
+        ArrayList<Contact> contacts = contactDAO.getAllContacts(user.getId());
+        httpSession.setAttribute("contacts", contacts);
         req.getRequestDispatcher("WEB-INF/views/overview.jsp").forward(req, resp);
     }
 }

@@ -76,7 +76,7 @@
             />
         </label>
     </form>
-    <a href="${pageContext.request.contextPath}/overview">
+    <a href="overview">
         Cancel</a>
 </section>
 </body>

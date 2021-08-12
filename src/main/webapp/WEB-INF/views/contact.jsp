@@ -80,7 +80,7 @@
                     class="submit btn-primary"
                     type="submit"
                     id="submit"
-                    value="SAVE"
+                    value="SAVE CHANGES"
             />
         </label>
     </form>
@@ -90,7 +90,7 @@
             <input class="submit btn-danger" type="submit" id="delete" value="DELETE">
         </label>
     </form>
-    <a href="${pageContext.request.contextPath}/overview">
+    <a href="overview">
         Cancel
     </a>
 </section>

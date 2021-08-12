@@ -20,10 +20,21 @@ public class UserDAO {
         query = "insert into users (email, password, firstName, lastName) VALUES (?,?,?,?)";
         try {
             statement = connection.prepareStatement(query);
-            statement.setString(1,user.getEmail());
-            statement.setString(2,user.getPassword());
-            statement.setString(3,user.getFirstName());
-            statement.setString(4,user.getLastName());
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getFirstName());
+            statement.setString(4, user.getLastName());
+            statement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public void deleteUser(String id) {
+        query = "delete from users where user_id=?";
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setString(1, id);
             statement.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -53,5 +64,19 @@ public class UserDAO {
             throwables.printStackTrace();
         }
         return user;
+    }
+
+    public void updateUser(User user) {
+        query = "update users set  firstName = ?, lastName = ?, email = ? where user_id = ?";
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getEmail());
+            statement.setString(4, user.getId());
+            statement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

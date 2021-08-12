@@ -48,7 +48,7 @@
         </label> -->
         <!-- <a href="">Forgot Password</a> -->
     </div>
-    <a href="signUp">Don't Have an Account? Sign Up.</a>
+    <a href="SignUp">Don't Have an Account? Sign Up.</a>
 </section>
 </body>
 </html>
